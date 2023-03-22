@@ -2,16 +2,22 @@
   "name": "tweeta",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
+    "express-graphql": "^0.12.0",
+    "mongodb": "^5.1.0",
+    "mongoose": "^7.0.2"
+  },
+  "devDependencies": {
     "nodemon": "^2.0.21"
   }
 }
