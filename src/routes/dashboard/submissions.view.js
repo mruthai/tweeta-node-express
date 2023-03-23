@@ -1,3 +1,3 @@
-module.exports = (req, res) => {
-    res.render('Submissions')
-}
+// module.exports = (req, res) => {
+//     res.render('Submissions')
+// }

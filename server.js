@@ -3,12 +3,23 @@ const dotenv = require('dotenv')
 const { connectDB } = require('./src/db')
 const path = require('path')
 const setupRoutes = require('./src/routes')
-const { User, Post, Submission } = require('./src/models')
+const { User, Post } = require('./src/models')
+const { graphqlHTTP } = require('express-graphql')
+const schema = require('./src/graphql/schema')
 
 dotenv.config()
 connectDB()
 
 const app = express()
+
+app.use('/graphql', graphqlHTTP ({
+    schema,
+    graphiql: true
+
+}) )
+
+
+
 setupRoutes(app)
 app.use(express.static(path.join(__dirname, 'public')))
 app.use('/public/images', express.static('./public/images'))
